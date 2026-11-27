@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Start your free trial | Virtual Business Card India</title>
-  <meta name="description" content="Share your contact details, products, gallery, brochure and payment info in one link, on WhatsApp, social media, QR code or an NFC card.">
+  <meta name="description" content="Create your digital business card in minutes.">
+  <meta name="theme-color" content="#30241E">
   <link rel="icon" href="assets/images/favicon.png">
   <script>(function(){var t;try{t=localStorage.getItem('vbc-theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'))})();</script>
   <link rel="stylesheet" href="assets/css/fonts.css">
@@ -24,13 +25,14 @@
       <li><a href="index.html#features">Features</a></li>
       <li><a href="index.html#designs">Designs</a></li>
       <li><a href="index.html#nfc">NFC Card</a></li>
-      <li><a href="#">Blogs</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
       <button class="theme-toggle" type="button" aria-label="Switch theme">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <mask id="moonMask"><rect width="24" height="24" fill="#fff"/><circle class="moon-mask" cx="24" cy="4" r="7" fill="#000"/></mask>
+          <mask id="moonMask"><rect width="24" height="24" fill="#FFFFFF"/><circle class="moon-mask" cx="24" cy="4" r="7" fill="#30241E"/></mask>
           <circle class="sun-core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#moonMask)"/>
           <g class="sun-rays" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></g>
         </svg>
@@ -41,20 +43,58 @@
     </div>
   </div>
 </header>
-
 <main class="auth">
-  <section class="auth-visual">
+  <section class="auth-visual reg-visual">
     <h1>Start your free trial</h1>
-    <p>Fill in the form and watch your card take shape. Pick a layout below, you can change it later.</p>
-    <div class="preview-wrap" id="previewWrap">
-      <div class="preview-scale" id="previewScale"><div class="preview-card" id="previewCard"></div></div>
+    <p>Fill in the form and watch your card come to life. Your link is ready the moment you finish.</p>
+
+    <div class="reg-stage">
+      <div class="reg-card" id="regCard" aria-hidden="true">
+        <!-- front: company side -->
+        <div class="pcard flip-face reg-front">
+          <svg class="pc-art" viewBox="0 0 1000 630" aria-hidden="true"><line x1="-10" y1="640" x2="480" y2="-10" class="pc-ln"/><circle cx="175" cy="398" r="58" class="pc-dt"/></svg>
+          <i class="fa-solid fa-wifi fa-rotate-90 pc-nfc"></i>
+          <div class="rc-co">
+            <span class="rc-mark" data-out="initials">YC</span>
+            <span class="rc-name" data-out="company">Your company</span>
+            <span class="rc-addr" data-out="place">Your city, State</span>
+            <span class="rc-gst" data-out="gst" hidden></span>
+          </div>
+          <span class="pc-url" data-out="url">vbcardindia.com/your-company</span>
+        </div>
+        <!-- back: person side -->
+        <div class="pcard flip-face flip-back reg-back">
+          <svg class="pc-art" viewBox="0 0 1000 630" aria-hidden="true"><line x1="-10" y1="640" x2="480" y2="-10" class="pc-ln"/><circle cx="175" cy="398" r="58" class="pc-dt"/></svg>
+          <span class="pc-name"><i class="fa-solid fa-circle-user"></i> <span data-out="name">Your name</span></span>
+          <span class="pc-phone"><i class="fa-solid fa-phone"></i> <span data-out="phone">+91 98XXX XXXXX</span></span>
+          <img class="pc-qr" src="assets/images/qr-vbcard.svg" alt="">
+          <span class="pc-link"><span data-out="url">vbcardindia.com/your-company</span><br><span class="rc-mail" data-out="email">you@company.com</span></span>
+        </div>
+      </div>
+      <div class="tap-burst" id="tapBurst" aria-hidden="true"><i></i><i></i><i></i></div>
     </div>
-    <div class="layout-picker" id="layoutPicker" aria-label="Choose a layout"></div>
-    <div class="preview-label" id="previewLabel"></div>
+
+    <div class="reg-progress" aria-live="polite">
+      <div class="rp-top">
+        <b id="rpLabel">Let's start with your company name</b>
+        <span id="rpPct">0%</span>
+      </div>
+      <div class="rp-bar"><span id="rpBar"></span></div>
+      <ul class="rp-steps" id="rpSteps">
+        <li data-f="rCompany"><i class="fa-solid fa-check"></i>Company</li>
+        <li data-f="rName"><i class="fa-solid fa-check"></i>Contact</li>
+        <li data-f="rEmail"><i class="fa-solid fa-check"></i>Email</li>
+        <li data-f="rMobile"><i class="fa-solid fa-check"></i>Mobile</li>
+        <li data-f="rCity" class="opt"><i class="fa-solid fa-check"></i>City</li>
+        <li data-f="rState" class="opt"><i class="fa-solid fa-check"></i>State</li>
+      </ul>
+      <span class="rp-layout" id="rpLayout" hidden></span>
+    </div>
   </section>
 
   <section class="auth-main">
     <form class="auth-form form-stacked" id="regForm" novalidate>
+      <input type="hidden" name="layout" id="rLayout">
       <h2>Create your account</h2>
       <p class="sub">It only takes a minute.</p>
 
@@ -113,7 +153,6 @@
 </main>
 
 <a class="wa-float" href="https://wa.me/919824773136" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-
 <script src="assets/js/cards.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/auth.js"></script>

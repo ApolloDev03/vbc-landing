@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Virtual Business Card India | Digital business card &amp; NFC card</title>
-  <meta name="description" content="Share your contact details, products, gallery, brochure and payment info in one link, on WhatsApp, social media, QR code or an NFC card.">
+  <meta name="description" content="Share your contact details, products, gallery, brochure and payment info in one link, on WhatsApp, a QR code or an NFC card.">
+  <meta name="theme-color" content="#30241E">
   <link rel="icon" href="assets/images/favicon.png">
   <script>(function(){var t;try{t=localStorage.getItem('vbc-theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'))})();</script>
   <link rel="stylesheet" href="assets/css/fonts.css">
@@ -24,13 +25,14 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#designs">Designs</a></li>
       <li><a href="#nfc">NFC Card</a></li>
-      <li><a href="#">Blogs</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
       <button class="theme-toggle" type="button" aria-label="Switch theme">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <mask id="moonMask"><rect width="24" height="24" fill="#fff"/><circle class="moon-mask" cx="24" cy="4" r="7" fill="#000"/></mask>
+          <mask id="moonMask"><rect width="24" height="24" fill="#FFFFFF"/><circle class="moon-mask" cx="24" cy="4" r="7" fill="#30241E"/></mask>
           <circle class="sun-core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#moonMask)"/>
           <g class="sun-rays" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></g>
         </svg>
@@ -41,7 +43,6 @@
     </div>
   </div>
 </header>
-
 <main>
 <!-- ============ Hero ============ -->
 <section class="hero">
@@ -75,14 +76,15 @@
       </div>
       <div class="tap-rings" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="nfc-card" aria-hidden="true">
-        <div class="logo-chip"><img src="assets/images/logo-light.png" alt=""></div>
-        <i class="fa-solid fa-wifi waves"></i>
-        <div class="chip"></div>
-        <div class="nfc-name"><b>Rohan Mehta</b><small>Mehta Exports</small></div>
+        <div class="pcard">
+          <svg class="pc-art" viewBox="0 0 1000 630" aria-hidden="true"><line x1="-10" y1="640" x2="480" y2="-10" class="pc-ln"/><circle cx="175" cy="398" r="58" class="pc-dt"/></svg>
+          <i class="fa-solid fa-wifi fa-rotate-90 pc-nfc"></i>
+          <img class="pc-logo" src="assets/images/logo-light.png" alt="">
+          <span class="pc-url">www.vbcardindia.com</span>
+        </div>
       </div>
-      <span class="float-chip" style="left: 30px; top: 70px;"><span class="ic" style="background:#25D366"><i class="fa-brands fa-whatsapp"></i></span>Shared on WhatsApp</span>
-      <span class="float-chip" style="left: 10px; top: 150px;"><span class="ic" style="background:var(--brand-deep)"><i class="fa-solid fa-address-book"></i></span>Saved to contacts</span>
-      <span class="float-chip" style="right: 20px; bottom: 40px;"><span class="ic" style="background:var(--marigold);color:#1b1300"><i class="fa-solid fa-indian-rupee-sign"></i></span>UPI payment received</span>
+      <span class="float-chip" style="left: 20px; top: 70px;"><span class="ic" style="background:var(--mocha)"><i class="fa-brands fa-whatsapp"></i></span>Shared on WhatsApp</span>
+      <span class="float-chip" style="left: 0; top: 150px;"><span class="ic" style="background:var(--espresso)"><i class="fa-solid fa-address-book"></i></span>Saved to contacts</span>
     </div>
   </div>
 </section>
@@ -95,79 +97,79 @@
       <p>Replace paper cards and scattered links with a single, professional profile.</p>
     </div>
     <div class="feat-grid">
-      <article class="feat" style="--a:#0A86C8">
+      <article class="feat" style="--a:#96745B">
         <span class="feat-ic"><i class="fa-solid fa-phone"></i></span>
         <h3>Click to call</h3>
         <p>Visitors reach you with a single tap. No typing numbers.</p>
         <i class="fa-solid fa-phone feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#1FAF55">
+      <article class="feat" style="--a:#D6B58C;--on-a:#30241E">
         <span class="feat-ic"><i class="fa-brands fa-whatsapp"></i></span>
         <h3>WhatsApp</h3>
         <p>Start a WhatsApp chat with you straight from the card.</p>
         <i class="fa-brands fa-whatsapp feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#E8890C">
+      <article class="feat" style="--a:#96745B">
         <span class="feat-ic"><i class="fa-solid fa-link"></i></span>
         <h3>Website links</h3>
         <p>Point people to your website and important pages.</p>
         <i class="fa-solid fa-link feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#0FA3A3">
+      <article class="feat" style="--a:#D6B58C;--on-a:#30241E">
         <span class="feat-ic"><i class="fa-solid fa-share-nodes"></i></span>
         <h3>Social media links</h3>
         <p>Bring all your social profiles together in one place.</p>
         <i class="fa-solid fa-share-nodes feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#E0567A">
+      <article class="feat" style="--a:#96745B">
         <span class="feat-ic"><i class="fa-solid fa-box-open"></i></span>
         <h3>Product display</h3>
         <p>Show your products with prices and share each one on WhatsApp.</p>
         <i class="fa-solid fa-box-open feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#7C5CE0">
+      <article class="feat" style="--a:#D6B58C;--on-a:#30241E">
         <span class="feat-ic"><i class="fa-solid fa-video"></i></span>
         <h3>Video gallery</h3>
         <p>Add videos so customers can see your work in action.</p>
         <i class="fa-solid fa-video feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#4F6BED">
+      <article class="feat" style="--a:#96745B">
         <span class="feat-ic"><i class="fa-solid fa-images"></i></span>
         <h3>Photo gallery</h3>
         <p>A visual portfolio of your business, always up to date.</p>
         <i class="fa-solid fa-images feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#1E9BE0">
+      <article class="feat" style="--a:#D6B58C;--on-a:#30241E">
         <span class="feat-ic"><i class="fa-solid fa-infinity"></i></span>
         <h3>Share unlimited</h3>
         <p>Send your card to as many people as you like, any time.</p>
         <i class="fa-solid fa-infinity feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#E5484D">
+      <article class="feat" style="--a:#96745B">
         <span class="feat-ic"><i class="fa-solid fa-file-pdf"></i></span>
         <h3>PDF brochure</h3>
         <p>Attach your brochure or catalogue for instant download.</p>
         <i class="fa-solid fa-file-pdf feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#D99A00">
+      <article class="feat" style="--a:#D6B58C;--on-a:#30241E">
         <span class="feat-ic"><i class="fa-solid fa-star"></i></span>
         <h3>Ratings and feedback</h3>
         <p>Collect reviews and let customers rate your service.</p>
         <i class="fa-solid fa-star feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#C2418C">
+      <article class="feat" style="--a:#96745B">
         <span class="feat-ic"><i class="fa-solid fa-palette"></i></span>
         <h3>Choose your design</h3>
         <p>Pick the card layout that fits your brand. Change it any time.</p>
         <i class="fa-solid fa-palette feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#6D4BD8">
+      <article class="feat" style="--a:#D6B58C;--on-a:#30241E">
         <span class="feat-ic"><i class="fa-solid fa-wifi fa-rotate-90"></i></span>
         <h3>NFC smart card</h3>
         <p>Tap the card on a phone and your digital card opens instantly.</p>
         <i class="fa-solid fa-wifi fa-rotate-90 feat-ghost" aria-hidden="true"></i>
       </article>
-      <article class="feat" style="--a:#2F9E5B">
+      <article class="feat" style="--a:#96745B">
         <span class="feat-ic"><i class="fa-solid fa-envelope-open-text"></i></span>
         <h3>Inquiry form</h3>
         <p>Receive customer enquiries directly from your card.</p>
@@ -223,19 +225,19 @@
 <section class="section" id="nfc">
   <div class="container nfc-grid">
     <div class="nfc-visual">
-      <div class="flip-card" id="flipCard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip the NFC card">
-        <div class="flip-face flip-front">
-          <div class="logo-chip"><img src="assets/images/logo-light.png" alt=""></div>
-          <i class="fa-solid fa-wifi waves"></i>
-          <div class="chip"></div>
-          <div class="flip-name"><b>Your name here</b><small>NFC smart card</small></div>
+      <div class="flip-card" id="flipCard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip the NFC card to see the back">
+        <div class="pcard flip-face">
+          <svg class="pc-art" viewBox="0 0 1000 630" aria-hidden="true"><line x1="-10" y1="640" x2="480" y2="-10" class="pc-ln"/><circle cx="175" cy="398" r="58" class="pc-dt"/></svg>
+          <i class="fa-solid fa-wifi fa-rotate-90 pc-nfc"></i>
+          <img class="pc-logo" src="assets/images/logo-light.png" alt="">
+          <span class="pc-url">www.vbcardindia.com</span>
         </div>
-        <div class="flip-face flip-back">
-          <div class="qr" id="qr" aria-hidden="true"></div>
-          <div>
-            <h4>No NFC? Scan the QR.</h4>
-            <p>Every card has a QR code on the back that opens the same profile on any phone camera.</p>
-          </div>
+        <div class="pcard flip-face flip-back">
+          <svg class="pc-art" viewBox="0 0 1000 630" aria-hidden="true"><line x1="-10" y1="640" x2="480" y2="-10" class="pc-ln"/><circle cx="175" cy="398" r="58" class="pc-dt"/></svg>
+          <span class="pc-name"><i class="fa-solid fa-circle-user"></i> Your name</span>
+          <span class="pc-phone"><i class="fa-solid fa-phone"></i> +91 98247 73136</span>
+          <img class="pc-qr" src="assets/images/qr-vbcard.svg" alt="QR code that opens vbcardindia.com">
+          <span class="pc-link">https://vbcardindia.com/your-company</span>
         </div>
       </div>
       <div class="nfc-specs">
@@ -263,6 +265,78 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="container faq-grid">
+    <div class="faq-side">
+      <div class="section-head" style="margin-bottom:0">
+        <h2>Questions, answered</h2>
+        <p>The things people usually ask before they make their first card.</p>
+      </div>
+      <div class="faq-help">
+        <div class="faq-bubbles" aria-hidden="true"><span>?</span><span>?</span><span>?</span></div>
+        <b>Still have a question?</b>
+        <p>Our team in Ahmedabad replies on WhatsApp and phone during working hours.</p>
+        <div class="btn-row">
+          <button class="btn btn-sm" type="button" data-open-modal><i class="fa-solid fa-comments"></i> Talk to us</button>
+          <a class="btn btn-sm btn-ghost" href="https://wa.me/919824773136" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="faq-list" id="faqList">
+        <div class="faq-item open">
+          <h3><button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-a0" id="faq-q0">
+            <span class="faq-n">01</span><span class="faq-t">What is a digital business card?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a0" role="region" aria-labelledby="faq-q0"><div><p>It's a mobile-friendly page with everything on your paper visiting card and more: call and WhatsApp buttons, your products, photos, videos, brochure, location and payment details. You share it as a link, a QR code or by tapping an NFC card.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+            <span class="faq-n">02</span><span class="faq-t">Do my customers need to install an app?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>No. Your card opens in any phone's browser. Customers can call you, message you or save you to their contacts straight from the page.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+            <span class="faq-n">03</span><span class="faq-t">How does the NFC card work?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>The NFC card has a small chip inside. When someone holds it near an NFC-enabled phone, your digital card opens on their screen. No app, no typing and no battery needed.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+            <span class="faq-n">04</span><span class="faq-t">What if a phone doesn't support NFC?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Every NFC card has a QR code printed on the back. Any phone camera can scan it to open the same card.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+            <span class="faq-n">05</span><span class="faq-t">Can I change my details after I've shared the card?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>Yes. Edit your card from your dashboard and the changes show up instantly on the same link, QR code and NFC card. You never need to reprint.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+            <span class="faq-n">06</span><span class="faq-t">Can I add products, photos and videos?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>Yes. You can list products with prices, add photo and video galleries, attach a PDF brochure and show your UPI QR and bank details.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+            <span class="faq-n">07</span><span class="faq-t">How does the free trial work?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>Sign up with your company name and mobile number and you can build and share a complete card during the trial. Our team will share the current trial length and plan prices when you register.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+            <span class="faq-n">08</span><span class="faq-t">How do I order a physical NFC card?</span><span class="faq-ic" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p>Use the Talk to us button or WhatsApp us. We print the card with your logo and QR code and deliver it to you.</p></div></div>
+        </div>
+    </div>
+  </div>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a digital business card?", "acceptedAnswer": {"@type": "Answer", "text": "It's a mobile-friendly page with everything on your paper visiting card and more: call and WhatsApp buttons, your products, photos, videos, brochure, location and payment details. You share it as a link, a QR code or by tapping an NFC card."}}, {"@type": "Question", "name": "Do my customers need to install an app?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your card opens in any phone's browser. Customers can call you, message you or save you to their contacts straight from the page."}}, {"@type": "Question", "name": "How does the NFC card work?", "acceptedAnswer": {"@type": "Answer", "text": "The NFC card has a small chip inside. When someone holds it near an NFC-enabled phone, your digital card opens on their screen. No app, no typing and no battery needed."}}, {"@type": "Question", "name": "What if a phone doesn't support NFC?", "acceptedAnswer": {"@type": "Answer", "text": "Every NFC card has a QR code printed on the back. Any phone camera can scan it to open the same card."}}, {"@type": "Question", "name": "Can I change my details after I've shared the card?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Edit your card from your dashboard and the changes show up instantly on the same link, QR code and NFC card. You never need to reprint."}}, {"@type": "Question", "name": "Can I add products, photos and videos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can list products with prices, add photo and video galleries, attach a PDF brochure and show your UPI QR and bank details."}}, {"@type": "Question", "name": "How does the free trial work?", "acceptedAnswer": {"@type": "Answer", "text": "Sign up with your company name and mobile number and you can build and share a complete card during the trial. Our team will share the current trial length and plan prices when you register."}}, {"@type": "Question", "name": "How do I order a physical NFC card?", "acceptedAnswer": {"@type": "Answer", "text": "Use the Talk to us button or WhatsApp us. We print the card with your logo and QR code and deliver it to you."}}]}</script>
+</section>
+
 <!-- ============ CTA ============ -->
 <section class="section" style="padding-top:0">
   <div class="container">
@@ -287,7 +361,7 @@
       <div>
         <a href="index.html" class="logo">
           <img class="logo-for-light" src="assets/images/logo-light.png" alt="Virtual Business Card India">
-          <img class="logo-for-dark" src="assets/images/logo-dark.png" alt="Virtual Business Card India">
+      <img class="logo-for-dark" src="assets/images/logo-dark.png" alt="Virtual Business Card India">
         </a>
         <p class="footer-about">Your complete business profile in one shareable link: contact, products, gallery, payments and more.</p>
         <div class="socials">
@@ -302,9 +376,9 @@
           <li><a href="#features">Features</a></li>
           <li><a href="#designs">Card layouts</a></li>
           <li><a href="#nfc">NFC smart card</a></li>
-          <li><a href="#">Blogs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
           <li><a href="register.html">Start free trial</a></li>
-          <li><a href="login.html">Log in</a></li>
         </ul>
       </div>
       <div>
@@ -317,14 +391,23 @@
         </ul>
       </div>
       <div>
-        <h4>Popular searches</h4>
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms and conditions</a></li>
+          <li><a href="refund.html">Refund policy</a></li>
+        </ul>
+        <h4 style="margin-top:26px">Popular searches</h4>
         <div class="tags">
-          <a href="#">VB card</a><a href="#">E-card</a><a href="#">Digital visiting card</a><a href="#">NFC business card</a><a href="#">QR business card</a>
+          <a href="#">VB card</a><a href="#">E-card</a><a href="#">Digital visiting card</a><a href="#">NFC business card</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> VB India. All rights reserved.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a>
+      </nav>
       <span>Made in Ahmedabad, India</span>
     </div>
   </div>
