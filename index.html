@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virtual Business Card India | Digital business card &amp; NFC card</title>
+  <meta name="description" content="Share your contact details, products, gallery, brochure and payment info in one link, on WhatsApp, social media, QR code or an NFC card.">
+  <link rel="icon" href="assets/images/favicon.png">
+  <script>(function(){var t;try{t=localStorage.getItem('vbc-theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'))})();</script>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="site-header">
+  <div class="container nav-shell">
+    <a href="index.html" class="logo" aria-label="Virtual Business Card India home">
+      <img class="logo-for-light" src="assets/images/logo-light.png" alt="Virtual Business Card India">
+      <img class="logo-for-dark" src="assets/images/logo-dark.png" alt="Virtual Business Card India">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#designs">Designs</a></li>
+      <li><a href="#nfc">NFC Card</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <mask id="moonMask"><rect width="24" height="24" fill="#fff"/><circle class="moon-mask" cx="24" cy="4" r="7" fill="#000"/></mask>
+          <circle class="sun-core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#moonMask)"/>
+          <g class="sun-rays" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></g>
+        </svg>
+      </button>
+      <a href="login.html" class="nav-login">Log in</a>
+      <a href="register.html" class="btn btn-sm">Start free trial</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-badge"><b>New</b> NFC cards now ship across India</span>
+      <h1>
+        <span class="line">Hand over a link,</span>
+        <span class="line">not a <span class="strike">paper card.</span></span>
+      </h1>
+      <p class="hero-lead">One link holds your contact details, products, gallery, brochure and UPI payment info. Share it on WhatsApp, as a QR code, or with a tap of your NFC card. Edit it any time and it never needs reprinting.</p>
+      <div class="hero-ctas">
+        <a href="register.html" class="btn">Start your free trial <span class="tap"><i class="fa-solid fa-wifi fa-rotate-90"></i></span></a>
+        <a href="#designs" class="btn btn-ghost"><i class="fa-regular fa-eye"></i> See card layouts</a>
+      </div>
+      <div class="hero-proof">
+        <span><i class="fa-solid fa-circle-check"></i> No app needed</span>
+        <span><i class="fa-solid fa-circle-check"></i> Unlimited sharing</span>
+        <span><i class="fa-solid fa-circle-check"></i> Update anytime</span>
+      </div>
+    </div>
+
+    <div class="stage" id="stage" aria-label="An NFC card tapping a phone to open a digital business card">
+      <div class="stage-glow"></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="phone-idle"><div><i class="fa-solid fa-wifi fa-rotate-90 nfc-ico"></i>Hold an NFC card near<br>the phone</div></div>
+          <div id="heroPhoneCard" class="vcard-slot"></div>
+        </div>
+      </div>
+      <div class="tap-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="nfc-card" aria-hidden="true">
+        <div class="logo-chip"><img src="assets/images/logo-light.png" alt=""></div>
+        <i class="fa-solid fa-wifi waves"></i>
+        <div class="chip"></div>
+        <div class="nfc-name"><b>Rohan Mehta</b><small>Mehta Exports</small></div>
+      </div>
+      <span class="float-chip" style="left: 30px; top: 70px;"><span class="ic" style="background:#25D366"><i class="fa-brands fa-whatsapp"></i></span>Shared on WhatsApp</span>
+      <span class="float-chip" style="left: 10px; top: 150px;"><span class="ic" style="background:var(--brand-deep)"><i class="fa-solid fa-address-book"></i></span>Saved to contacts</span>
+      <span class="float-chip" style="right: 20px; bottom: 40px;"><span class="ic" style="background:var(--marigold);color:#1b1300"><i class="fa-solid fa-indian-rupee-sign"></i></span>UPI payment received</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Features ============ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Everything your business needs on one card</h2>
+      <p>Replace paper cards and scattered links with a single, professional profile.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat" style="--a:#0A86C8">
+        <span class="feat-ic"><i class="fa-solid fa-phone"></i></span>
+        <h3>Click to call</h3>
+        <p>Visitors reach you with a single tap. No typing numbers.</p>
+        <i class="fa-solid fa-phone feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#1FAF55">
+        <span class="feat-ic"><i class="fa-brands fa-whatsapp"></i></span>
+        <h3>WhatsApp</h3>
+        <p>Start a WhatsApp chat with you straight from the card.</p>
+        <i class="fa-brands fa-whatsapp feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#E8890C">
+        <span class="feat-ic"><i class="fa-solid fa-link"></i></span>
+        <h3>Website links</h3>
+        <p>Point people to your website and important pages.</p>
+        <i class="fa-solid fa-link feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#0FA3A3">
+        <span class="feat-ic"><i class="fa-solid fa-share-nodes"></i></span>
+        <h3>Social media links</h3>
+        <p>Bring all your social profiles together in one place.</p>
+        <i class="fa-solid fa-share-nodes feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#E0567A">
+        <span class="feat-ic"><i class="fa-solid fa-box-open"></i></span>
+        <h3>Product display</h3>
+        <p>Show your products with prices and share each one on WhatsApp.</p>
+        <i class="fa-solid fa-box-open feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#7C5CE0">
+        <span class="feat-ic"><i class="fa-solid fa-video"></i></span>
+        <h3>Video gallery</h3>
+        <p>Add videos so customers can see your work in action.</p>
+        <i class="fa-solid fa-video feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#4F6BED">
+        <span class="feat-ic"><i class="fa-solid fa-images"></i></span>
+        <h3>Photo gallery</h3>
+        <p>A visual portfolio of your business, always up to date.</p>
+        <i class="fa-solid fa-images feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#1E9BE0">
+        <span class="feat-ic"><i class="fa-solid fa-infinity"></i></span>
+        <h3>Share unlimited</h3>
+        <p>Send your card to as many people as you like, any time.</p>
+        <i class="fa-solid fa-infinity feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#E5484D">
+        <span class="feat-ic"><i class="fa-solid fa-file-pdf"></i></span>
+        <h3>PDF brochure</h3>
+        <p>Attach your brochure or catalogue for instant download.</p>
+        <i class="fa-solid fa-file-pdf feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#D99A00">
+        <span class="feat-ic"><i class="fa-solid fa-star"></i></span>
+        <h3>Ratings and feedback</h3>
+        <p>Collect reviews and let customers rate your service.</p>
+        <i class="fa-solid fa-star feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#C2418C">
+        <span class="feat-ic"><i class="fa-solid fa-palette"></i></span>
+        <h3>Choose your design</h3>
+        <p>Pick the card layout that fits your brand. Change it any time.</p>
+        <i class="fa-solid fa-palette feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#6D4BD8">
+        <span class="feat-ic"><i class="fa-solid fa-wifi fa-rotate-90"></i></span>
+        <h3>NFC smart card</h3>
+        <p>Tap the card on a phone and your digital card opens instantly.</p>
+        <i class="fa-solid fa-wifi fa-rotate-90 feat-ghost" aria-hidden="true"></i>
+      </article>
+      <article class="feat" style="--a:#2F9E5B">
+        <span class="feat-ic"><i class="fa-solid fa-envelope-open-text"></i></span>
+        <h3>Inquiry form</h3>
+        <p>Receive customer enquiries directly from your card.</p>
+        <i class="fa-solid fa-envelope-open-text feat-ghost" aria-hidden="true"></i>
+      </article>
+      <div class="feat-cta">
+        <div>
+          <h3>Make yours in about ten minutes</h3>
+          <p>Free trial, no payment details needed.</p>
+        </div>
+        <a href="register.html" class="btn btn-light">Create your card <span class="tap"><i class="fa-solid fa-wifi fa-rotate-90"></i></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ How it works ============ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <h2>Live in three steps</h2>
+      <p>Most people finish their card in about ten minutes.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><h3>Register free</h3><p>Sign up with your company name and mobile number to start your free trial.</p></div>
+      <div class="step"><span class="step-num">2</span><h3>Build your card</h3><p>Add your details, products, photos, videos and links, then pick a layout.</p></div>
+      <div class="step"><span class="step-num">3</span><h3>Share everywhere</h3><p>Send your link on WhatsApp, print the QR, or tap your NFC card. Changes go live instantly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Card layouts deck ============ -->
+<section class="section layouts" id="designs">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Pick a layout that fits your business</h2>
+      <p>Drag the cards or use the arrows to browse. You can switch layouts any time after you sign up.</p>
+    </div>
+    <div class="deck" id="deck" tabindex="0" aria-roledescription="carousel" aria-label="Card layouts. Use left and right arrow keys to browse."></div>
+    <div class="deck-controls">
+      <button class="deck-arrow" id="deckPrev" type="button" aria-label="Previous layout"><i class="fa-solid fa-arrow-left"></i></button>
+      <div class="deck-info" aria-live="polite">
+        <div class="d-name" id="deckName"></div>
+        <div class="d-sub" id="deckSub"></div>
+      </div>
+      <button class="deck-arrow" id="deckNext" type="button" aria-label="Next layout"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <div class="deck-use"><a href="register.html" id="deckUse" class="btn btn-gold">Use this layout <span class="tap"><i class="fa-solid fa-wifi fa-rotate-90"></i></span></a></div>
+  </div>
+</section>
+
+<!-- ============ NFC ============ -->
+<section class="section" id="nfc">
+  <div class="container nfc-grid">
+    <div class="nfc-visual">
+      <div class="flip-card" id="flipCard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip the NFC card">
+        <div class="flip-face flip-front">
+          <div class="logo-chip"><img src="assets/images/logo-light.png" alt=""></div>
+          <i class="fa-solid fa-wifi waves"></i>
+          <div class="chip"></div>
+          <div class="flip-name"><b>Your name here</b><small>NFC smart card</small></div>
+        </div>
+        <div class="flip-face flip-back">
+          <div class="qr" id="qr" aria-hidden="true"></div>
+          <div>
+            <h4>No NFC? Scan the QR.</h4>
+            <p>Every card has a QR code on the back that opens the same profile on any phone camera.</p>
+          </div>
+        </div>
+      </div>
+      <div class="nfc-specs">
+        <span><i class="fa-solid fa-id-card"></i> Premium PVC finish</span>
+        <span><i class="fa-solid fa-qrcode"></i> QR on the back</span>
+        <span><i class="fa-solid fa-battery-empty"></i> No battery, no app</span>
+      </div>
+      <span class="flip-hint"><i class="fa-solid fa-hand-pointer"></i> Click the card to flip it</span>
+    </div>
+    <div>
+      <div class="section-head" style="margin-bottom:0">
+        <h2>Tap the card. Your profile opens.</h2>
+        <p>Along with your digital card we make a physical NFC card. Hold it near any NFC-enabled phone and your full business profile opens. No app and no typing.</p>
+      </div>
+      <ul class="check-list">
+        <li><i class="fa-solid fa-check"></i><div><b>Tap to share</b><span>Works with NFC-enabled smartphones. Handy at meetings, trade fairs and shop counters.</span></div></li>
+        <li><i class="fa-solid fa-check"></i><div><b>Always up to date</b><span>Change your details online and the same NFC card shows the latest information.</span></div></li>
+        <li><i class="fa-solid fa-check"></i><div><b>Your whole digital card</b><span>Contact, WhatsApp, products, gallery, brochure and payment info in one tap.</span></div></li>
+      </ul>
+      <div class="btn-row">
+        <button class="btn" type="button" data-open-modal><i class="fa-solid fa-comments"></i> Ask about NFC cards</button>
+        <a href="register.html" class="btn btn-ghost">Start free trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Ready to go digital?</h2>
+        <p>Create your first card in minutes. Questions before you start? Our team in Ahmedabad is happy to help.</p>
+      </div>
+      <div class="btn-row">
+        <a href="register.html" class="btn btn-light">Start your free trial <span class="tap"><i class="fa-solid fa-wifi fa-rotate-90"></i></span></a>
+        <button class="btn btn-ghost" type="button" data-open-modal><i class="fa-solid fa-comments"></i> Talk to us</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">
+          <img class="logo-for-light" src="assets/images/logo-light.png" alt="Virtual Business Card India">
+          <img class="logo-for-dark" src="assets/images/logo-dark.png" alt="Virtual Business Card India">
+        </a>
+        <p class="footer-about">Your complete business profile in one shareable link: contact, products, gallery, payments and more.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/919824773136" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#designs">Card layouts</a></li>
+          <li><a href="#nfc">NFC smart card</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="register.html">Start free trial</a></li>
+          <li><a href="login.html">Log in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links footer-contact">
+          <li><i class="fa-solid fa-envelope"></i><a href="mailto:support@vbcardindia.com">support@vbcardindia.com</a></li>
+          <li><i class="fa-solid fa-envelope"></i><a href="mailto:sales@vbcardindia.com">sales@vbcardindia.com</a></li>
+          <li><i class="fa-solid fa-phone"></i><a href="tel:+919824773136">+91 98247 73136</a></li>
+          <li><i class="fa-solid fa-location-dot"></i><span>Bhairavnath Cross Road, Maninagar, Ahmedabad</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular searches</h4>
+        <div class="tags">
+          <a href="#">VB card</a><a href="#">E-card</a><a href="#">Digital visiting card</a><a href="#">NFC business card</a><a href="#">QR business card</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> VB India. All rights reserved.</span>
+      <span>Made in Ahmedabad, India</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919824773136" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- ============ Talk to us modal ============ -->
+<div class="modal" id="talkModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="talkTitle">
+  <div class="modal-box">
+    <button class="modal-close" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h3 id="talkTitle">Talk to us</h3>
+    <p>Leave your details and we'll call you back, usually within a working day.</p>
+    <form novalidate>
+      <div class="field">
+        <input id="tName" type="text" placeholder=" " required autocomplete="name">
+        <i class="fa-solid fa-user"></i><label for="tName">Name</label>
+        <div class="err">Enter your name.</div>
+      </div>
+      <div class="field">
+        <input id="tMobile" type="tel" placeholder=" " required data-type="mobile" inputmode="numeric" autocomplete="tel">
+        <i class="fa-solid fa-phone"></i><label for="tMobile">Mobile number</label>
+        <div class="err">Enter a 10-digit mobile number.</div>
+      </div>
+      <div class="field">
+        <textarea id="tMsg" placeholder=" "></textarea>
+        <i class="fa-solid fa-message"></i><label for="tMsg">Message (optional)</label>
+      </div>
+      <button class="btn btn-block" type="submit">Send message <i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>
+
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

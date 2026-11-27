@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in | Virtual Business Card India</title>
+  <meta name="description" content="Share your contact details, products, gallery, brochure and payment info in one link, on WhatsApp, social media, QR code or an NFC card.">
+  <link rel="icon" href="assets/images/favicon.png">
+  <script>(function(){var t;try{t=localStorage.getItem('vbc-theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'))})();</script>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="site-header solid">
+  <div class="container nav-shell">
+    <a href="index.html" class="logo" aria-label="Virtual Business Card India home">
+      <img class="logo-for-light" src="assets/images/logo-light.png" alt="Virtual Business Card India">
+      <img class="logo-for-dark" src="assets/images/logo-dark.png" alt="Virtual Business Card India">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#designs">Designs</a></li>
+      <li><a href="index.html#nfc">NFC Card</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <mask id="moonMask"><rect width="24" height="24" fill="#fff"/><circle class="moon-mask" cx="24" cy="4" r="7" fill="#000"/></mask>
+          <circle class="sun-core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#moonMask)"/>
+          <g class="sun-rays" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></g>
+        </svg>
+      </button>
+      <a href="login.html" class="nav-login" aria-current="page">Log in</a>
+      <a href="register.html" class="btn btn-sm">Start free trial</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="auth">
+  <section class="auth-visual">
+    <h1>Welcome back</h1>
+    <p>Manage your cards, reply to enquiries and keep your business profile fresh.</p>
+    <div class="fan" id="fan" aria-hidden="true"></div>
+  </section>
+
+  <section class="auth-main">
+    <div class="auth-form">
+      <h2>Log in</h2>
+      <p class="sub">Use the mobile number you registered with.</p>
+
+      <div class="segmented" id="loginMode" data-mode="password" role="tablist" aria-label="Login method">
+        <span class="seg-thumb"></span>
+        <button type="button" role="tab" aria-selected="true" data-mode="password">Password</button>
+        <button type="button" role="tab" aria-selected="false" data-mode="otp">One-time code</button>
+      </div>
+
+      <!-- Password login -->
+      <form class="mode-panel" id="pwForm" novalidate>
+        <div class="field">
+          <input id="lMobile" type="tel" placeholder=" " required data-type="mobile" inputmode="numeric" autocomplete="tel">
+          <i class="fa-solid fa-phone"></i><label for="lMobile">Mobile number</label>
+          <div class="err">Enter your 10-digit mobile number.</div>
+        </div>
+        <div class="field">
+          <input id="lPass" type="password" placeholder=" " required minlength="6" autocomplete="current-password">
+          <i class="fa-solid fa-lock"></i><label for="lPass">Password</label>
+          <button class="eye" type="button" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+          <div class="err">Password must be at least 6 characters.</div>
+        </div>
+        <div class="form-meta">
+          <label class="check"><input type="checkbox" checked> Keep me logged in</label>
+          <a href="#" data-switch="otp">Forgot password?</a>
+        </div>
+        <button class="btn btn-block" type="submit">Log in <span class="tap"><i class="fa-solid fa-wifi fa-rotate-90"></i></span></button>
+      </form>
+
+      <!-- OTP login -->
+      <form class="mode-panel" id="otpForm" novalidate hidden>
+        <div class="field">
+          <input id="oMobile" type="tel" placeholder=" " required data-type="mobile" inputmode="numeric" autocomplete="tel">
+          <i class="fa-solid fa-phone"></i><label for="oMobile">Mobile number</label>
+          <div class="err">Enter your 10-digit mobile number.</div>
+        </div>
+        <div id="otpBoxes" hidden>
+          <p class="sub" style="margin:0 0 12px">Enter the 6-digit code we sent by SMS.</p>
+          <div class="otp" role="group" aria-label="One-time code">
+            <input inputmode="numeric" maxlength="1" aria-label="Digit 1"><input inputmode="numeric" maxlength="1" aria-label="Digit 2"><input inputmode="numeric" maxlength="1" aria-label="Digit 3"><input inputmode="numeric" maxlength="1" aria-label="Digit 4"><input inputmode="numeric" maxlength="1" aria-label="Digit 5"><input inputmode="numeric" maxlength="1" aria-label="Digit 6">
+          </div>
+        </div>
+        <button class="btn btn-block" type="submit" id="otpBtn">Send code <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+
+      <p class="auth-switch">New here? <a href="register.html">Start your free trial</a></p>
+    </div>
+  </section>
+</main>
+
+<a class="wa-float" href="https://wa.me/919824773136" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
