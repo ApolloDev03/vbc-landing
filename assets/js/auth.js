@@ -71,58 +71,128 @@
     });
   }
 
-  /* ---------- REGISTER ---------- */
+  /* ---------- REGISTER: the NFC card fills in as you type ---------- */
   const reg = $("#regForm");
   if (reg) {
-    const preview = $("#previewCard"), picker = $("#layoutPicker"), label = $("#previewLabel");
-    const params = new URLSearchParams(location.search);
-    let layout = CARD_LAYOUTS.find(l => String(l.id) === params.get("layout")) || CARD_LAYOUTS[0];
+    const card = $("#regCard");
+    const val = id => ($("#" + id)?.value || "").trim();
+    const outs = key => $$(`[data-out="${key}"]`, card);
+    const blank = { company: "Your company", name: "Your name", phone: "+91 98XXX XXXXX", email: "you@company.com", place: "Your city, State" };
+    const slug = t => t.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 32);
+    const initials = t => t.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join("") || "YC";
+    const phoneFmt = t => {
+      const d = t.replace(/\D/g, "").slice(-10);
+      if (!d) return "";
+      return "+91 " + (d.length > 5 ? d.slice(0, 5) + " " + d.slice(5) : d);
+    };
 
-    // what the preview shows when a field is empty
-    const blank = { name: "Your name", role: "Owner", company: "Your company", phone: "+91 98XXX XXXXX", email: "you@company.com", web: "vbcardindia.com/you", city: "Your city" };
-    const values = {};
+    // which side of the card each field lives on, and what it updates
+    const map = {
+      rCompany: { side: "front", keys: ["company", "initials", "url"] },
+      rGst:     { side: "front", keys: ["gst"] },
+      rAddress: { side: "front", keys: ["place"] },
+      rCity:    { side: "front", keys: ["place"] },
+      rState:   { side: "front", keys: ["place"] },
+      rPin:     { side: "front", keys: ["place"] },
+      rName:    { side: "back",  keys: ["name"] },
+      rEmail:   { side: "back",  keys: ["email"] },
+      rMobile:  { side: "back",  keys: ["phone"] }
+    };
 
-    function draw(pulse) {
-      const data = { ...layout, ...blank };
-      Object.keys(values).forEach(k => { if (values[k]) data[k] = values[k]; });
-      preview.innerHTML = renderVCard(data);
-      label.textContent = `Layout ${layout.id}, ${layout.title}`;
-      if (pulse) { preview.classList.remove("pulse"); void preview.offsetWidth; preview.classList.add("pulse"); }
+    function compute() {
+      const company = val("rCompany");
+      const place = [val("rCity"), val("rState")].filter(Boolean).join(", ") + (val("rPin") ? " " + val("rPin") : "");
+      return {
+        company: company || blank.company,
+        initials: initials(company),
+        url: "vbcardindia.com/" + (slug(company) || "your-company"),
+        gst: val("rGst").toUpperCase(),
+        place: place || (val("rAddress") ? val("rAddress") : blank.place),
+        name: val("rName") || blank.name,
+        email: val("rEmail") || blank.email,
+        phone: phoneFmt(val("rMobile")) || blank.phone
+      };
     }
 
-    picker.innerHTML = CARD_LAYOUTS.map(l =>
-      `<button type="button" style="--c1:${l.colors.c1};--c2:${l.colors.c2}" aria-pressed="${l.id === layout.id}" data-id="${l.id}" aria-label="Layout ${l.id}, ${l.title}" title="${l.title}"></button>`
-    ).join("");
-    picker.addEventListener("click", e => {
-      const b = e.target.closest("button"); if (!b) return;
-      layout = CARD_LAYOUTS.find(l => String(l.id) === b.dataset.id);
-      $$("button", picker).forEach(x => x.setAttribute("aria-pressed", x === b));
-      draw(true);
+    function paint(changedKeys = []) {
+      const data = compute();
+      Object.entries(data).forEach(([k, v]) => outs(k).forEach(el => {
+        if (el.textContent !== v) {
+          el.textContent = v;
+          if (changedKeys.includes(k)) { el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump"); }
+        }
+      }));
+      const gst = outs("gst")[0]; if (gst) gst.hidden = !data.gst;
+      if (gst && data.gst) gst.textContent = "GSTIN " + data.gst;
+    }
+
+    function setSide(side) { card.classList.toggle("show-back", side === "back"); }
+
+    function setTyping(id, on) {
+      $$("[data-out].typing", card).forEach(el => el.classList.remove("typing"));
+      if (!on || !map[id]) return;
+      const key = map[id].keys[0];
+      outs(key).forEach(el => el.classList.add("typing"));
+    }
+
+    // progress checklist
+    const steps = $$("#rpSteps li");
+    const required = ["rCompany", "rName", "rEmail", "rMobile"];
+    const okField = id => {
+      const el = $("#" + id), v = val(id);
+      if (!v) return false;
+      if (el.type === "email") return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      if (el.dataset.type === "mobile") return /^[6-9]\d{9}$/.test(v.replace(/\D/g, "").slice(-10));
+      return true;
+    };
+    let wasComplete = false;
+    function progress(activeId) {
+      const all = steps.map(li => li.dataset.f);
+      const done = all.filter(okField);
+      steps.forEach(li => {
+        li.classList.toggle("done", okField(li.dataset.f));
+        li.classList.toggle("now", li.dataset.f === activeId);
+      });
+      const pct = Math.round((done.length / all.length) * 100);
+      $("#rpBar").style.width = pct + "%";
+      $("#rpPct").textContent = pct + "%";
+      const nextReq = required.find(id => !okField(id));
+      const labels = { rCompany: "Let's start with your company name", rName: "Now, who should customers contact?",
+                       rEmail: "Add your email address", rMobile: "Add your mobile number" };
+      const complete = !nextReq;
+      $("#rpLabel").textContent = complete ? (pct === 100 ? "Your card is complete" : "Ready to start. Add your city to finish") : labels[nextReq];
+      if (complete && !wasComplete) {
+        card.classList.remove("celebrate"); void card.offsetWidth; card.classList.add("celebrate");
+        const b = $("#tapBurst"); b.classList.remove("go"); void b.offsetWidth; b.classList.add("go");
+      }
+      wasComplete = complete;
+    }
+
+    Object.keys(map).forEach(id => {
+      const el = $("#" + id); if (!el) return;
+      el.addEventListener("focus", () => { setSide(map[id].side); setTyping(id, true); progress(id); });
+      el.addEventListener("blur", () => setTyping(id, false));
+      el.addEventListener("input", () => { setSide(map[id].side); paint(map[id].keys); progress(id); });
     });
 
-    // live binding: typing updates only the bound text, no re-render
-    $$("[data-bind]", reg).forEach(inp => inp.addEventListener("input", () => {
-      const key = inp.dataset.bind;
-      values[key] = inp.value.trim();
-      const node = preview.querySelector(`[data-bind="${key}"]`);
-      if (node) node.textContent = values[key] || blank[key];
-      if (key === "name") preview.querySelector(".vc-avatar").textContent = vcInitials(values.name || "Your Name");
-    }));
-    draw();
+    // layout chosen on the landing page (register.html?layout=106)
+    const layoutId = new URLSearchParams(location.search).get("layout");
+    if (layoutId) {
+      $("#rLayout").value = layoutId;
+      const l = (window.CARD_LAYOUTS || []).find(x => String(x.id) === layoutId);
+      const chip = $("#rpLayout");
+      chip.textContent = `Layout ${layoutId}${l ? ", " + l.title : ""} selected`;
+      chip.hidden = false;
+    }
 
-    // scale the preview so it always fits the panel height
-    const wrap = $("#previewWrap"), scaler = $("#previewScale");
-    const fit = () => {
-      const h = wrap.clientHeight;
-      scaler.style.setProperty("--fit", h ? Math.min(1, h / 480).toFixed(3) : 1);
-    };
-    fit(); addEventListener("resize", fit);
+    paint(); progress();
 
     reg.addEventListener("submit", e => {
       e.preventDefault();
-      if (!vbcValidate(reg)) return;
-      // TODO: backend — POST all fields plus layout.id
-      vbcToast(`Account created with layout ${layout.id}. Opening your dashboard…`);
+      if (!vbcValidate(reg)) { const f = reg.querySelector(".field.invalid input"); f && setSide(map[f.id]?.side); return; }
+      // TODO: backend - POST the form fields (and #rLayout) to create the account
+      card.classList.remove("celebrate"); void card.offsetWidth; card.classList.add("celebrate");
+      vbcToast("Account created. Opening your dashboard…");
     });
   }
 })();

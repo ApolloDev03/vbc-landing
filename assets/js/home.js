@@ -153,7 +153,22 @@
     restart();
   }
 
-  /* ---------- NFC flip card + QR pattern ---------- */
+  /* ---------- FAQ: one open at a time ---------- */
+  const faq = $("#faqList");
+  if (faq) {
+    faq.addEventListener("click", e => {
+      const q = e.target.closest(".faq-q"); if (!q) return;
+      const item = q.closest(".faq-item");
+      const willOpen = !item.classList.contains("open");
+      $$(".faq-item", faq).forEach(it => {
+        const on = it === item && willOpen;
+        it.classList.toggle("open", on);
+        $(".faq-q", it).setAttribute("aria-expanded", on);
+      });
+    });
+  }
+
+  /* ---------- NFC flip card ---------- */
   const flip = $("#flipCard");
   if (flip) {
     const toggle = () => {
@@ -163,18 +178,5 @@
     flip.addEventListener("click", toggle);
     flip.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
 
-    const qr = $("#qr");
-    const N = 11, cells = [];
-    const finder = (x, y) => {
-      const inBox = (ox, oy) => x >= ox && x < ox + 3 && y >= oy && y < oy + 3;
-      return inBox(0, 0) || inBox(N - 3, 0) || inBox(0, N - 3);
-    };
-    let seed = 7;
-    const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
-      const on = finder(x, y) ? !(x % (N - 3) === 1 && y % (N - 3) === 1 && false) : rnd() > .5;
-      cells.push(`<i class="${on ? "" : "o"}"></i>`);
-    }
-    qr.innerHTML = cells.join("");
   }
 })();
